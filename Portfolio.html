@@ -10,62 +10,69 @@
 <body>
     <nav class="navbar">
         <ul>
-            <li><a href="#about" class="nav-link active">Hakkımda</a></li>
+            <li><a href="#about" class="nav-link">Hakkımda</a></li>
             <li><a href="#education" class="nav-link">Eğitim</a></li>
-            <li><a href="#experience" class="nav-link">İş Deneyimi</a></li>
-            <li><a href="#projects" class="nav-link">Projeler</a></li>
+            <li><a href="#events" class="nav-link">Etkinlikler</a></li>
             <li><a href="#contact" class="nav-link">İletişim</a></li>
+            <li><a href="#interests" class="nav-link">İlgi Alanları</a></li>
+            <li><a href="#social" class="nav-link">Sosyal Medya</a></li>
         </ul>
     </nav>
     <div class="container">
-        <!-- About Section -->
-        <section id="about">
-            <h1>Bubukuşu çok severim tatlı severim (buubukuş) akıllı zeki yakışıklı güzel vücut boy bos hazırcevap çabuk çevik</h1>
-            <div class="profile">
-                <div class="profile-image">
-                    <img src="./asset/dudu.png" alt="Profile Picture" class="profile-pic">
-                </div>
-                <div class="social-links">
-                    <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
+        <!-- Profile Section -->
+        <section id="about" class="profile">
+            <div class="profile-image">
+                <img src="./asset/foto.jpg" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="about-me">
+                <h2>Hakkımda</h2>
+                <p>
+                    Ben Kayahan Kocaoğlan, Adanalıyım ve Çukurova Üniversitesi'nde Bilgisayar Mühendisliği okuyorum. Şu anda web geliştirme üzerine kendimi geliştiriyorum. HTML, CSS, JavaScript, Node.js ve React ile çalışıyorum. Gelişim sürecimi en basit uygulamalardan en karmaşıklara doğru ilerleyerek GitHub üzerinde paylaşıyorum, böylece ilerlememi gözlemleyebiliyorum.
+                </p>
+                
+                <a href="./asset/CV.pdf" download class="cv-button">
+                    <i class="fas fa-download"></i>
+                    CV'mi İndir
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/kayahankocaoglann/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Kkocaoglan" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kayahan-kocao%C4%9Flan-9892a51b4/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- Eğitim Section -->
         <section id="education">
             <h2>Eğitim</h2>
             <div class="education-container">
-                <div class="education-bubble top">
-                    <h3>Sungurbey Anadolu Lisesi</h3>
-                    <p class="date">2017-2021</p>
-                </div>
-                <div class="education-bubble bottom">
-                    <img src="./asset/Culogo.png" alt="Çukurova Üniversitesi Logo" class="university-logo">
-                    <h3>Çukurova Üniversitesi</h3>
-                    <p class="major">Bilgisayar Mühendisliği</p>
-                    <div class="date-status">
-                        <p class="date">2023-2028</p>
-                        <span class="status">Devam Ediyor</span>
+                <div class="education-card">
+                    <div class="education-header">
+                        <img src="./asset/Culogo.png" alt="Üniversite Logo" class="university-logo">
+                        <h3>Çukurova Üniversitesi</h3>
+                    </div>
+                    <div class="education-content">
+                        <p class="degree">Bilgisayar Mühendisliği</p>
+                        <p class="date">2023 - Devam Ediyor</p>
+                        <div class="education-details">
+                            <p>GPA: 3.02</p>
+                           
+                        </div>
                     </div>
                 </div>
+                <!-- Diğer eğitim kartları buraya eklenebilir -->
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience">
-            <h1>İş deneyimi</h1>
-            <h2>0 ın üstünde herhangi bir miktara ergenlerin vır vırı çekiyoruz beyinsiz aptal sürüleri</h2>
-            
-        </section>
-
-        <!-- Current Projects -->
-        <section id="projects">
-            <h2>Güncel Projeler</h2>
-            <div class="projects-grid">
-                <!-- Add your current projects here -->
-            </div>
+        <section id="events">
+            <h1>Etkinlikler</h1>
+            <h2>CENGA Teknik Ekip Üyesi</h2>
+            <p>
+                Online ve yüz yüze etkinliklerde konukların araştırılıp bulunması, etkinliğe
+                uygunluğu, yüz yüze etkinliklerin zaman ve yer planlanması dahil bütün
+                organizasyon teknik ekip tarafından yapılmaktadır.
+            </p>
         </section>
 
         <!-- Contact Form -->
@@ -88,31 +95,41 @@
         <!-- Interests Section -->
         <section id="interests">
             <h2>İlgi Alanları</h2>
+            
             <div class="interest-item">
-                <h3>🦜 Bubukuşu Sevgisi</h3>
-                <p>Bubukuşlarına olan tutkum ve sevgim sonsuz! Onların neşeli, zeki ve sevimli doğaları beni her zaman büyülüyor.</p>
+                <h3>Spor & Fitness</h3>
+                <p>Vücut geliştirme ve fonksiyonel antrenman alanlarında düzenli olarak çalışmalar yapıyorum, fitness yaşam tarzımın önemli bir parçası.</p>
+            </div>
+
+            <div class="interest-item">
+                <h3>Felsefe & Tarih</h3>
+                <p>Özellikle felsefe ve tarih kitapları okumayı severim düzenli olarak ayda en az 4 kitap okumaya çalışırırm.</p>
             </div>
         </section>
 
         <!-- Social Media Section -->
-        <section id="social-media">
+        <section id="social">
             <h2>Sosyal Medya</h2>
             <div class="social-links">
-                <a href="https://github.com/Kkocaoglan" target="_blank" class="social-item">
+                <a href="https://github.com/Kkocaoglan" class="social-item" target="_blank">
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
                 </a>
-                <a href="https://www.linkedin.com/in/kayahan-kocao%C4%9Flan-9892a51b4/" target="_blank" class="social-item">
+                <a href="https://www.linkedin.com/in/kayahan-kocao%C4%9Flan-9892a51b4/" class="social-item" target="_blank">
                     <i class="fab fa-linkedin"></i>
                     <span>LinkedIn</span>
                 </a>
-                <a href="https://www.instagram.com/kayahankocaoglann/" target="_blank" class="social-item">
+                <a href="https://www.instagram.com/kayahankocaoglann/" class="social-item" target="_blank">
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
             </div>
         </section>
     </div>
+
+    <button class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <script src="Portfolio.js"></script>
 </body>

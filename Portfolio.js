@@ -36,3 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// Theme toggle functionality
+const themeToggle = document.querySelector('.theme-toggle');
+const htmlElement = document.documentElement;
+
+themeToggle.addEventListener('click', () => {
+    if (htmlElement.getAttribute('data-theme') === 'light') {
+        htmlElement.removeAttribute('data-theme');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+        htmlElement.setAttribute('data-theme', 'light');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+});

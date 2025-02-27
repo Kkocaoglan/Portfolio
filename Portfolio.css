@@ -7,8 +7,8 @@
 }
 
 body {
-    background-color: #121212;
-    color: #40E0D0; /* Turkuaz renk */
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -23,9 +23,10 @@ body {
 section {
     margin: 50px 0;
     padding: 30px;
-    background-color: #1a1a1a;
+    background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(64, 224, 208, 0.1);
+    scroll-margin-top: 80px; /* Adds margin for scroll positioning */
 }
 
 h1, h2 {
@@ -36,17 +37,32 @@ h1, h2 {
 
 /* Profile Section */
 .profile {
-    text-align: center;
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
 }
 
-.profile-img {
+.profile-image {
     width: 200px;
     height: 200px;
+    margin-right: 20px;
     border-radius: 50%;
+    overflow: hidden;
     border: 3px solid #40E0D0;
-    margin-bottom: 20px;
 }
 
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%; /* Adjusted from 30% to 20% to move image higher */
+}
+
+/* About Me Section */
+.about-me {
+    max-width: 600px; /* Optional: limit width of the about me section */
+}
+
+/* Social Links */
 .social-links {
     display: flex;
     gap: 2rem;
@@ -68,7 +84,7 @@ h1, h2 {
 }
 
 .social-item i {
-    font-size: 2rem;
+    font-size: 2rem; /* Increased icon size */
     margin-bottom: 0.5rem;
     color: #00CED1; /* Turkuaz renk */
 }
@@ -148,6 +164,7 @@ button:hover {
     background-color: rgba(18, 18, 18, 0.95);
     padding: 15px 0;
     z-index: 1000;
+    height: 60px; /* Explicit height for navbar */
 }
 
 .navbar ul {
@@ -155,10 +172,11 @@ button:hover {
     justify-content: center;
     list-style: none;
     padding: 0;
+    gap: 1.5rem; /* Menü öğeleri arasındaki boşluk */
 }
 
 .navbar li {
-    margin: 0 20px;
+    margin: 0; /* Önceki margin'i kaldırıyoruz */
 }
 
 .navbar .nav-link {
@@ -166,6 +184,8 @@ button:hover {
     text-decoration: none;
     font-size: 18px;
     transition: all 0.3s ease;
+    padding-bottom: 5px; /* Border için padding ekledik */
+    border-bottom: 2px solid transparent; /* Varsayılan saydam border */
 }
 
 .navbar .nav-link:hover {
@@ -177,138 +197,86 @@ button:hover {
     border-bottom: 2px solid #40E0D0;
 }
 
+/* Education Section Styles */
 .education-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 20px 0;
 }
 
-.education-bubble {
-    background: #f8f9fa;
-    border-radius: 50%;
-    width: 280px;
-    height: 280px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.education-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    padding: 25px;
+    border-left: 4px solid #40E0D0;
+    box-shadow: 0 4px 15px rgba(64, 224, 208, 0.1);
     transition: transform 0.3s ease;
 }
 
-.education-bubble:hover {
-    transform: scale(1.05);
+.education-card:hover {
+    transform: translateY(-5px);
 }
 
-.education-bubble h3 {
-    margin: 0;
-    text-align: center;
-    color: #333;
-}
-
-.education-bubble .date {
-    margin-top: 1rem;
-    color: #666;
-    font-weight: 500;
-}
-
-.education-bubble .major {
-    margin: 0.5rem 0;
-    color: #444;
-    text-align: center;
-}
-
-.date-status {
+.education-header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.status {
-    background: #28a745;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-weight: 500;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .university-logo {
-    width: 80px;
-    height: auto;
-    margin-bottom: 1rem;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-    display: block;
 }
 
-h1 {
-    margin-bottom: 1.5rem;
-    color: #333;
+.education-header h3 {
+    color: #40E0D0;
+    margin: 0;
+    font-size: 1.4rem;
 }
 
-.experience-item {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.education-content {
+    color: #fff;
 }
 
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.degree {
+    font-size: 1.1rem;
+    color: #40E0D0;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: #888;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
-.experience-header h3 {
-    margin: 0;
-    color: #333;
+.education-details {
+    color: #ccc;
+    line-height: 1.6;
 }
 
-.date {
-    color: #666;
-    font-size: 0.9rem;
+/* Responsive Design */
+@media (min-width: 768px) {
+    .education-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
 
-.experience-details ul {
-    margin-top: 0.5rem;
-    padding-left: 1.2rem;
-}
-
-.experience-details li {
-    margin-bottom: 0.5rem;
-    color: #555;
-}
-
-/* İş deneyimi için beyaz renk */
-.experience-details p, 
-.experience-details li {
-    color: #fff; /* Beyaz renk */
-}
-
-.experience-header h3,
-.date {
-    color: #fff; /* Beyaz renk */
-}
-
-/* Bubukuşu kısmı için turkuaz renk */
+/* Interest Section Styles */
 .interest-item {
-    background: #f8f9fa;
+    background-color: #1a1a1a;
     border-radius: 10px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-left: 4px solid #00CED1;
+    box-shadow: 0 0 20px rgba(64, 224, 208, 0.1);
+    border-left: 4px solid #40E0D0;
 }
 
 .interest-item h3,
 .interest-item p {
-    color: #00CED1; /* Turkuaz renk */
+    color: #40E0D0; /* Turkuaz renk */
 }
 
 .interest-item h3 {
@@ -321,19 +289,20 @@ h1 {
     margin: 0;
 }
 
+/* Contact Section Styles */
 .contact-info {
-    background: #f8f9fa;
+    background-color: #1a1a1a; /* Dark background like other sections */
     border-radius: 10px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(64, 224, 208, 0.1);
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    color: #fff; /* Beyaz renk */
+    color: #40E0D0; /* Turkuaz renk */
 }
 
 .contact-item:last-child {
@@ -342,7 +311,7 @@ h1 {
 
 .contact-item i {
     margin-right: 1rem;
-    color: #00CED1; /* Turkuaz renk */
+    color: #40E0D0; /* Turkuaz renk */
 }
 
 .contact-item span {
@@ -350,11 +319,164 @@ h1 {
 }
 
 .contact-item a {
-    color: #00CED1; /* Turkuaz renk */
+    color: #40E0D0; /* Turkuaz renk */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
     color: #00A0A0; /* Hover durumunda biraz daha koyu turkuaz */
+}
+
+/* Experience Section */
+#experience {
+    background-color: #1a1a1a; /* Same background color as other sections */
+    border-radius: 10px; /* Optional: keep the same border radius */
+    padding: 30px; /* Optional: keep the same padding */
+    box-shadow: 0 0 20px rgba(64, 224, 208, 0.1); /* Optional: keep the same shadow */
+}
+
+#experience h1, 
+#experience h2, 
+#experience p {
+    color: #40E0D0; /* Turkuaz renk */
+}
+
+/* CV Button Styles */
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #40E0D0;
+    color: #121212;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+.cv-button i {
+    font-size: 1.2rem;
+}
+
+/* Scroll Padding for Smooth Navigation */
+html {
+    scroll-padding-top: 80px; /* Navbar height + some padding */
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px; /* Scroll için margin */
+}
+
+/* Dark/Light Mode Styles */
+:root {
+    --bg-color: #121212;
+    --text-color: #40E0D0;
+    --card-bg: #1a1a1a;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #008B8B;
+    --card-bg: #f5f5f5;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    background: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1002; /* Navbar'ın üstünde görünmesi için */
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #40E0D0;
+    z-index: 1001;
+    transition: width 0.1s ease;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 5px;
+    background: rgba(64, 224, 208, 0.1);
+    border: 1px solid #40E0D0;
+    border-radius: 20px;
+    color: #40E0D0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: #40E0D0;
+    color: #121212;
+    transform: translateY(-2px);
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #40E0D0;
+}
+
+.timeline-item {
+    margin: 40px 0;
+    position: relative;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(64, 224, 208, 0.1);
+}
+
+.hover-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.hover-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(64, 224, 208, 0.1));
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.hover-card:hover::before {
+    transform: translateX(0);
 }
